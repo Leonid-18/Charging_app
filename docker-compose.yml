@@ -1,0 +1,36 @@
+version: '3'
+services:
+  shell_charge_db:
+    container_name: shell_charge_db
+    image: postgres:13.3
+    restart: on-failure
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+#  shell-charge:
+#    container_name: shell-charge
+#    restart: on-failure
+#    build: ./
+#    tty: true
+#    depends_on:
+#         - shell_charge_db
+#    ports:
+#         - "8000:8000"
+#    volumes:
+#        - .:/opt/shell-charge/api
+#    entrypoint:  dockerize -timeout 240s -wait tcp://shell_charge_db:5432 /opt/shell-charge/api/bin/startdev.sh
+
+
+  redis:
+    container_name: shell-charge-redis
+    image: redis:alpine
+    restart: on-failure
+    ports:
+      - "6379:6379"

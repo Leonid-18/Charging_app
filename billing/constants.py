@@ -1,0 +1,15 @@
+from django.utils.translation import gettext_lazy as _
+
+
+BILLING_ITEM_TYPE_DEPOSIT = 1
+BILLING_ITEM_TYPE_CHARGE = 2
+BILLING_ITEM_TYPE_BLOCK = 3
+BILLING_ITEM_TYPE_FINISHED = 4
+
+
+BILLING_ITEM_TYPES = (
+    (BILLING_ITEM_TYPE_DEPOSIT, _("Deposit")),
+    (BILLING_ITEM_TYPE_CHARGE, _("Charge")),
+    (BILLING_ITEM_TYPE_BLOCK, _("Block")),
+    (BILLING_ITEM_TYPE_FINISHED, _("Finished")),
+)
