@@ -64,9 +64,3 @@ body example:
 
 and we receive billing in our data
 
-
-I dont have a lot of time, thats why I have done endpoint payments 
-for change rate and receive information for bookkeeper. But it's easy to add
-due to the fact that we have staff users and billing information and for payments 
-endpoint I only have to check if user is staff or not and get information for needed user
-
